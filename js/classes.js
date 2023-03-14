@@ -1,36 +1,31 @@
-let inputBusca = document.querySelector("#input-buscar-filme");
-let btnBusca = document.querySelector("#btn-buscar-filme");
-
-btnBusca.onclick = ()=>{
-    if(inputBusca.value.length > 0){
-        let filmes = new Array();
-        fetch("http://www.omdbapi.com/?i=tt3896198&apikey=fcd1bc7f&s="+inputbusca.value, {mode:"cors"})
-        .then((resp)=> resp.json())
-        .then((resp)=> {
-           resp.Search.forEach((item)=> {
-            console.log(item);
-            let filme = new Filme(
-                item.imdbID,
-                item.Title,
-                item.Year,
-                null,
-                null,
-                item.Poster,
-                null,
-                null,
-                null,
-                null,
-                null
-
-            );
-                filmes.push(filme);
-
-           });
-        })
+class Ator{
+    constructor(id, nome){
+        this.nome = nome;
+        this.id = id;
     }
-    return false;
 }
 
+class Diretor{
+    constructor(id, nome){
+        this.nome = nome;
+        this.id = id;
+    }
+}
+
+class Filme{
+    constructor(id, titulo, ano, genero, duracao, cartaz, sinopse, direcao, elenco, classificacao, avaliacao){
+        this.id = id;
+        this.titulo = titulo;
+        this.ano = ano;
+        this.genero = genero;
+        this.duracao = duracao;
+        this.sinopse = sinopse;
+        this.cartaz = cartaz;
+        this.direcao = direcao;
+        this.elenco = elenco;
+        this.classificacao =classificacao;
+        this.avaliacao = avaliacao;
+    }
 getCard = async () =>{
 
     let card = document.createElement("div");
@@ -43,7 +38,7 @@ getCard = async () =>{
     let hCardTitle = document.createElement("h5");
     hCardTitle.setAttribute("class","card-title");
     let divDetalhes = document.createElement("div");
-    divDetalhes.setAttribute9("style","display:flex; justify-content:space-around;");
+    divDetalhes.setAttribute("style","display:flex; justify-content:space-around;");
     let divGenero = document.createElement("div");
     divGenero.setAttribute("style","flex-grow:1;");
     let divAnoProducao = document.createElement("div");
@@ -54,8 +49,14 @@ getCard = async () =>{
     divGenero.appendChild(document.createTextNode(this.genero));
     divAnoProducao.appendChild(document.createTextNode(this.ano));
     divClassificacao.appendChild(document.createTextNode(this.classificacao));
+    divDetalhes.appendChild(divGenero);
+    divDetalhes.appendChild(divAnoProducao);
+    divDetalhes.appendChild(divClassificacao);
+    card.appendChild(imgCartaz);
+    card.appendChild(cardBody);
+    cardBody.appendChild(hCardTitle);
+    cardBody.appendChild(divDetalhes);
+    return card;
 }
 
-let listarFilmes = async (filmes) => {
-    let listaFilmes = await document.querySelector("");
 }
