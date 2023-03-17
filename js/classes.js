@@ -25,6 +25,7 @@ class Filme{
         this.elenco = elenco;
         this.classificacao =classificacao;
         this.avaliacao = avaliacao;
+        this.btnDetalhes = null;
     }
 getCard = async () =>{
 
@@ -56,7 +57,34 @@ getCard = async () =>{
     card.appendChild(cardBody);
     cardBody.appendChild(hCardTitle);
     cardBody.appendChild(divDetalhes);
+
+    this.setBtnDetalhes();
+    cardBody.appendChild(this.getBtnDetalhes());
+
     return card;
+}
+
+setBtnDetalhes = () => {
+    this.btnDetalhes = document.createElement("button");
+    this.btnDetalhes.appendChild(document.createTextNode("Detalhes"));
+    this.btnDetalhes.setAttribute("id", this.id);
+    this.btnDetalhes.setAttribute("class", "btnDetalhesFilme");
+}
+
+getBtnDetalhes = () => {
+    return this.btnDetalhes;
+}
+
+getDetalhesFilme = () =>{
+    let mostrardetalhes = document.createElement("div");
+    mostrardetalhes.setAttribute("div");
+
+    let mostrarimg = document.createElement("div");
+    mostrarimg.setAttribute("class","card-img-top");
+    mostrarimg.setAttribute("src",this.cartaz);
+
+    let mostrartitulo = document.createElement("div")
+
 }
 
 }
