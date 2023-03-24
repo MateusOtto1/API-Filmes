@@ -19,8 +19,8 @@ class Filme{
         this.ano = ano;
         this.genero = genero;
         this.duracao = duracao;
-        this.sinopse = sinopse;
         this.cartaz = cartaz;
+        this.sinopse = sinopse;
         this.direcao = direcao;
         this.elenco = elenco;
         this.classificacao =classificacao;
@@ -65,7 +65,7 @@ getCard = async () =>{
 }
 
 setBtnDetalhes = () => {
-    this.btnDetalhes = document.createElement("button");
+    this.btnDetalhes = document.createElement('button');
     this.btnDetalhes.appendChild(document.createTextNode("Detalhes"));
     this.btnDetalhes.setAttribute("id", this.id);
     this.btnDetalhes.setAttribute("class", "btnDetalhesFilme");
@@ -76,15 +76,70 @@ getBtnDetalhes = () => {
 }
 
 getDetalhesFilme = () =>{
+    
     let mostrardetalhes = document.createElement("div");
-    mostrardetalhes.setAttribute("div");
+    mostrardetalhes.setAttribute("class", "descricaofilme");
 
-    let mostrarimg = document.createElement("div");
-    mostrarimg.setAttribute("class","card-img-top");
+    let todosdetalhes = document.createElement("div");
+    todosdetalhes.setAttribute("class","descricoes");
+
+    let card = document.createElement("div");
+    card.setAttribute("id", "card-body");
+
+    let divimg = document.createElement("div");
+    divimg.setAttribute("class", "divimg");
+
+    let mostrarimg = document.createElement("img");
+    mostrarimg.setAttribute("class","imgdescricao");
     mostrarimg.setAttribute("src",this.cartaz);
 
-    let mostrartitulo = document.createElement("div")
+    let mostrartitulo = document.createElement("h3");
+    mostrartitulo.setAttribute("class","card-text");
+    mostrartitulo.appendChild(document.createTextNode("Título: "+this.titulo));
 
+    let mostrargenero = document.createElement("h5");
+    mostrargenero.setAttribute("class","card-text");
+    mostrargenero.appendChild(document.createTextNode("Gênero: "+this.genero));
+
+    let mostrarduracao = document.createElement("h5");
+    mostrarduracao.setAttribute("class","card-text");
+    mostrarduracao.appendChild(document.createTextNode("Duração: "+this.duracao));
+
+    let mostrarsinopse = document.createElement("h5");
+    mostrarsinopse.setAttribute("class","card-text");
+    mostrarsinopse.appendChild(document.createTextNode("Sinopse: "+this.sinopse));
+
+    let mostrardirecao = document.createElement("h5");
+    mostrardirecao.setAttribute("class","card-text");
+    mostrardirecao.appendChild(document.createTextNode("Direção: "+this.direcao));
+
+    let mostrarelenco = document.createElement("h5");
+    mostrarelenco.setAttribute("class","card-text");
+    mostrarelenco.appendChild(document.createTextNode("Elenco: "+this.elenco));
+
+    let mostrarclassificacao = document.createElement("h5");
+    mostrarclassificacao.setAttribute("class","card-text");
+    mostrarclassificacao.appendChild(document.createTextNode("Classificação: "+this.classificacao));
+
+    let mostraravaliacao = document.createElement("h5");
+    mostraravaliacao.setAttribute("class","card-text");
+    mostraravaliacao.appendChild(document.createTextNode("Avaliação: "+this.avaliacao));
+
+    todosdetalhes.appendChild(mostrartitulo);
+    todosdetalhes.appendChild(mostrargenero);
+    todosdetalhes.appendChild(mostrarduracao);
+    todosdetalhes.appendChild(mostrarsinopse);
+    todosdetalhes.appendChild(mostrardirecao);
+    todosdetalhes.appendChild(mostrarelenco);
+    todosdetalhes.appendChild(mostrarclassificacao);
+    divimg.appendChild(mostrarimg);
+    todosdetalhes.appendChild(mostraravaliacao);
+    todosdetalhes.appendChild(card);
+    mostrardetalhes.appendChild(divimg);
+    mostrardetalhes.appendChild(todosdetalhes);
+    
+
+    return mostrardetalhes;
 }
 
 }

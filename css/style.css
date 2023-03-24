@@ -26,16 +26,6 @@ body{
     height: 400px;
 }
 
-footer{
-    margin-top: 5vh;
-    text-align: center;
-    width: 100%;
-    height: 50px;
-    background-color: rgb(17, 17, 17);
-    color: rgb(255, 255, 255);
-    display: inline-block;
-}
-
 .btnDetalhesFilme{
     border-radius: 5px;
     border: 2px solid rgb(100, 100, 100);
@@ -48,4 +38,34 @@ footer{
 
 .btnDetalhesFilme:hover{
     background-color: #4d0000;
+}
+
+h3{
+    color: white;
+}
+
+h5{
+    color: white;
+}
+
+.divimg{
+    width: 300px; 
+    height: 450px;
+    display: inline-block;
+    float:left;
+    margin-left: 11vw;
+}
+
+.descricoes{
+    margin-left: 7vw;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+.descricaofilme{
+    margin-top: 100px;
+}
+
+.card-text{
+    margin-top: 25px;
 }

@@ -33,14 +33,16 @@ btnBusca.onclick = ()=>{
 }
 
 let listarFilmes = async (filmes) => {
-    let listaFilmes = document.querySelector("#lista-filmes");
+    let listaFilmes = await document.querySelector("#lista-filmes");
+    listaFilmes.style.display ="";
     listaFilmes.innerHTML = "";
-    console.log(listaFilmes);
+    document.querySelector("#mostrar-filme").innerHTML = "";
+    document.querySelector("#mostrar-filme").style.display = "none";
     if(filmes.length > 0){
         filmes.forEach(async(filme) => {
             console.log(filme);
             listaFilmes.appendChild(await filme.getCard());
-            filme.getBtnDetalhes().onclick = () =>{
+            filme.getBtnDetalhes().onclick=()=>{
                 detalhesFilme(filme.id);
             }
         });
@@ -51,7 +53,6 @@ let detalhesFilme = async (id) =>{
     fetch("https://www.omdbapi.com/?apikey=fcd1bc7f&i=" +id)
     .then((resp) => resp.json())
     .then((resp) => {
-        console.log(resp);
         let filme = new Filme(
             resp.imdbID,
             resp.Title,
@@ -65,6 +66,8 @@ let detalhesFilme = async (id) =>{
             resp.Awards,
             resp.imdbRating
         )
-            console.log(filme);
+        document.querySelector("#mostrar-filme").appendChild(filme.getDetalhesFilme());
+        document.querySelector("#lista-filmes").style.display = "none";
+        document.querySelector("#mostrar-filme").style.display = "flex";
     });
 }
