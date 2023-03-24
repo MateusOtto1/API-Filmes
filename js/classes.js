@@ -138,6 +138,15 @@ getDetalhesFilme = () =>{
     mostrardetalhes.appendChild(divimg);
     mostrardetalhes.appendChild(todosdetalhes);
     
+    let btnSalvar = document.createElement('button');
+    btnSalvar.appendChild(document.createTextNode('Salvar'));
+    btnSalvar.setAttribute('id', 'btnSalvar');
+    mostrardetalhes.appendChild(btnSalvar);
+
+    let btnFechar = document.createElement('button');
+    btnFechar.appendChild(document.createTextNode('Fechar'));
+    btnFechar.setAttribute('id', 'btnFechar');
+    mostrardetalhes.appendChild(btnFechar);
 
     return mostrardetalhes;
 }

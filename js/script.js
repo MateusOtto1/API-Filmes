@@ -67,6 +67,16 @@ let detalhesFilme = async (id) =>{
             resp.imdbRating
         )
         document.querySelector("#mostrar-filme").appendChild(filme.getDetalhesFilme());
+        document.querySelector("#btnFechar").onclick = ()=>{
+            document.querySelector("#lista-filmes").style.display = "";
+            document.querySelector("#mostrar-filme").innerHTML="";
+            document.querySelector("#mostrar-filme").style.display = "none";
+        }
+
+        document.querySelector("#btnSalvar").onclick = () =>{
+            salvarFilme(filme);
+        }
+
         document.querySelector("#lista-filmes").style.display = "none";
         document.querySelector("#mostrar-filme").style.display = "flex";
     });

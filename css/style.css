@@ -10,7 +10,7 @@ body{
 
 .card{ 
     margin-top: 10vh;
-    margin-left: 13vw;
+    margin-left: 8vw;
     width: 300px; 
     height: 550px;
     background-color: #0c0c0c;
@@ -53,13 +53,14 @@ h5{
     height: 450px;
     display: inline-block;
     float:left;
-    margin-left: 11vw;
+    margin-left: 10vw;
 }
 
 .descricoes{
-    margin-left: 7vw;
+    margin-left: 5vw;
     display: inline-block;
     margin-bottom: 25px;
+    width: 60vw;
 }
 
 .descricaofilme{
@@ -69,3 +70,48 @@ h5{
 .card-text{
     margin-top: 25px;
 }
+
+#btnSalvar{
+    border-radius: 5px;
+    border: 2px solid rgb(100, 100, 100);
+    background-color: rgb(0, 0, 0);
+    color:white;
+    margin-top: 15px;
+    width:75px;
+    height:35px;
+    margin-bottom: 25px;
+    margin-left: 13vw;
+}
+
+#btnSalvar:hover{
+    background-color: #4d0000;
+}
+
+#btnFechar{
+    border-radius: 5px;
+    border: 2px solid rgb(100, 100, 100);
+    background-color: rgb(0, 0, 0);
+    color:white;
+    margin-top: 15px;
+    width:75px;
+    height:35px;
+    margin-bottom: 25px;
+    margin-left: 3vw;
+}
+
+#btnFechar:hover{
+    background-color: #4d0000;
+}
+
+@media (max-width: 390px){
+	.descricoes{
+        width: 80vw;
+    }
+    #btnSalvar{
+        margin-left:19vw;
+    }
+    #btnFechar{
+        margin-left:18vw;
+    }
+}
+
