@@ -139,9 +139,14 @@ getDetalhesFilme = () =>{
     mostrardetalhes.appendChild(todosdetalhes);
     
     let btnSalvar = document.createElement('button');
-    btnSalvar.appendChild(document.createTextNode('Salvar'));
+    btnSalvar.appendChild(document.createTextNode('Favoritar'));
     btnSalvar.setAttribute('id', 'btnSalvar');
     mostrardetalhes.appendChild(btnSalvar);
+
+    let btnDesfavoritar = document.createElement('button');
+    btnDesfavoritar.appendChild(document.createTextNode('Desfavoritar'));
+    btnDesfavoritar.setAttribute('id', 'btnDesfavoritar');
+    mostrardetalhes.appendChild(btnDesfavoritar);
 
     let btnFechar = document.createElement('button');
     btnFechar.appendChild(document.createTextNode('Fechar'));
