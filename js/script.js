@@ -101,7 +101,7 @@ let listarFilmes = async (filmes) => {
             }
             
             if (filmes.some(filmeId => filmeId.id === filme.id)) {
-                alert("O filme esta salvo");
+                alert("O filme já está favoritado!");
                 return;
             }
 
@@ -139,5 +139,6 @@ listarFavoritos = () => {
             
     });
 
-    listarFilmes(filmes);   
+    listarFilmes(filmes); 
+     
 }

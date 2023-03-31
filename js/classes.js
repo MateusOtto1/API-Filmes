@@ -151,9 +151,21 @@ getDetalhesFilme = () =>{
     let btnFechar = document.createElement('button');
     btnFechar.appendChild(document.createTextNode('Fechar'));
     btnFechar.setAttribute('id', 'btnFechar');
-    mostrardetalhes.appendChild(btnFechar);
+    mostrardetalhes.appendChild(btnFechar); 
+
+    let btnEditar = document.createElement('button');
+    btnEditar.appendChild(document.createTextNode('Editar'));
+    btnEditar.setAttribute('id', 'btnEditar');
+    mostrardetalhes.appendChild(btnEditar);
 
     return mostrardetalhes;
 }
+
+    getEditarFilme = () =>{
+
+        let form = document.createElement("form");
+        let  = document.createElement("form");
+        let form = document.createElement("form");
+    }
 
 }
