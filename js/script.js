@@ -3,6 +3,7 @@ let btnBusca = document.querySelector("#btn-buscar-filme");
 
 
 btnBusca.onclick = ()=>{
+    
     if(inputBusca.value.length > 0){
         let filmes = new Array();
         fetch("https://www.omdbapi.com/?i=tt3896198&apikey=fcd1bc7f&s="+inputBusca.value, {mode:"cors"})
@@ -29,6 +30,7 @@ btnBusca.onclick = ()=>{
            listarFilmes(filmes);
         })
     }
+    inputBusca.value = '';
     return false;
 }
 
