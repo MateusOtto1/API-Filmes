@@ -160,12 +160,59 @@ getDetalhesFilme = () =>{
 
     return mostrardetalhes;
 }
-
+ 
     getEditarFilme = () =>{
 
-        let form = document.createElement("form");
-        let  = document.createElement("form");
-        let form = document.createElement("form");
-    }
+    let mostrardetalhes = document.createElement("div");
+    mostrardetalhes.setAttribute("class", "descricaofilme");
 
+    let todosdetalhes = document.createElement("div");
+    todosdetalhes.setAttribute("class","descricoes");
+
+    let card = document.createElement("div");
+    card.setAttribute("id", "card-body");
+
+    let divimg = document.createElement("div");
+    divimg.setAttribute("class", "divimg");
+
+    let mostrarimg = document.createElement("img");
+    mostrarimg.setAttribute("class","imgdescricao");
+    mostrarimg.setAttribute("src",this.cartaz);
+
+    let mostrartitulo = document.createElement("h3");
+    mostrartitulo.setAttribute("class","card-text");
+    mostrartitulo.appendChild(document.createTextNode("Título: "));
+    let inputTitulo = document.createElement("input");
+        inputTitulo.setAttribute("class", "form-control inputEditar")
+        inputTitulo.setAttribute("id", "inputTitulo");
+    
+        
+    let mostrarsinopse = document.createElement("h5");
+    mostrarsinopse.setAttribute("class","card-text");
+    mostrarsinopse.appendChild(document.createTextNode("Sinopse: "));
+    let inputSinopse = document.createElement("input");
+        inputSinopse.setAttribute("class","form-control me-2 inputEditar")
+        inputSinopse.setAttribute("id","inputSinopse");
+    
+    todosdetalhes.appendChild(mostrartitulo);
+    todosdetalhes.appendChild(inputTitulo);
+    todosdetalhes.appendChild(mostrarsinopse);
+    todosdetalhes.appendChild(inputSinopse);
+    divimg.appendChild(mostrarimg);
+    todosdetalhes.appendChild(card);
+    mostrardetalhes.appendChild(divimg);
+    mostrardetalhes.appendChild(todosdetalhes);
+    
+    let btnSalvar = document.createElement('button');
+    btnSalvar.appendChild(document.createTextNode('Salvar'));
+    btnSalvar.setAttribute('id', 'btnSalvar');
+    mostrardetalhes.appendChild(btnSalvar);
+
+    let btnFechar = document.createElement('button');
+    btnFechar.appendChild(document.createTextNode('Fechar'));
+    btnFechar.setAttribute('id', 'btnFechar');
+    mostrardetalhes.appendChild(btnFechar); 
+
+    return mostrardetalhes;
+}
 }

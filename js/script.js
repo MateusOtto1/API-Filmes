@@ -89,6 +89,31 @@ let listarFilmes = async (filmes) => {
             // Atualizar a lista de filmes favoritos na interface do usuário
             listarFavoritos();
         }
+        document.querySelector("#btnEditar").onclick = () =>{
+            
+            document.querySelector("#mostrar-filme").innerHTML="";
+            document.querySelector("#mostrar-filme").appendChild(filme.getEditarFilme());
+
+            document.querySelector("#btnSalvar").onclick = () =>{
+
+                let inputTitulo = document.querySelector("#inputTitulo");
+                let inputSinopse = document.querySelector("#inputSinopse");
+                let tituloAtual = inputTitulo.value;
+                let sinopseAtual = inputSinopse.value;
+
+                filme.titulo = tituloAtual;
+                filme.sinopse = sinopseAtual;
+        
+                localStorage.setItem('filmeEditado', JSON.stringify(filme));
+                listarFavoritos();
+                }
+
+                document.querySelector("#btnFechar").onclick = ()=>{
+                document.querySelector("#lista-filmes").style.display = "";
+                document.querySelector("#mostrar-filme").innerHTML="";
+                document.querySelector("#mostrar-filme").style.display = "none";
+            }
+        }
 
         document.querySelector("#lista-filmes").style.display = "none";
         document.querySelector("#mostrar-filme").style.display = "flex";
@@ -109,6 +134,7 @@ let listarFilmes = async (filmes) => {
             filmes = JSON.stringify(filmes);
             localStorage.setItem('filmesFavoritos', filmes);
         }   
+
     });
        
 }
@@ -140,5 +166,4 @@ listarFavoritos = () => {
     });
 
     listarFilmes(filmes); 
-     
 }
